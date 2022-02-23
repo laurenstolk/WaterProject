@@ -24,6 +24,7 @@
     <form method="post" asp-page="/Donate">
 
         <input type="hidden" asp-for="@Model.ProjectID" />
+        <input type="hidden" name="return URL" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
 
         <span class="card-text">
             <button type="submit" class="btn btn-success btn-sm float-right">Donate</button>
