@@ -16,6 +16,8 @@
     <Folder Include="Views\Shared\Components\" />
     <Folder Include="Views\Shared\Components\Types\" />
     <Folder Include="Pages\" />
+    <Folder Include="Views\Donation\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Models\" />
@@ -30,6 +32,8 @@
     <None Remove="Views\Shared\Components\" />
     <None Remove="Views\Shared\Components\Types\" />
     <None Remove="Pages\" />
+    <None Remove="Views\Donation\" />
+    <None Remove="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.22" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace WaterProject.Models
@@ -8,7 +9,7 @@ namespace WaterProject.Models
     {
         public List<BasketLineItem> Items { get; set; } = new List<BasketLineItem>();
 
-        public void AddItem(Project Proj, int qty)
+        public virtual void AddItem(Project Proj, int qty)
         {
             BasketLineItem line = Items
                 .Where(p => p.Project.ProjectID == Proj.ProjectID)
@@ -26,7 +27,17 @@ namespace WaterProject.Models
             {
                 line.Quantity += qty;
             }
+        }
 
+
+        public virtual void RemoveItem(Project proj)
+        {
+            Items.RemoveAll(x => x.Project.ProjectID == proj.ProjectID);
+        }
+
+        public virtual void ClearBasket()
+        {
+            Items.Clear();
         }
 
 
@@ -39,11 +50,9 @@ namespace WaterProject.Models
 
     }
 
-    
-
-
     public class BasketLineItem
     {
+        [Key]
         public int LineID { get; set; }
 
         public Project Project { get; set; }
