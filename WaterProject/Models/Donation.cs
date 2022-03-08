@@ -36,5 +36,8 @@ namespace WaterProject.Models
 
         public bool Anonymous { get; set; }
 
+        [BindNever]
+        public bool DonationReceived { get; set; }
+
     }
 }

@@ -9,8 +9,8 @@ using WaterProject.Models;
 namespace WaterProject.Migrations
 {
     [DbContext(typeof(WaterProjectContext))]
-    [Migration("20220301052629_first")]
-    partial class first
+    [Migration("20220307172940_AddReceivedField")]
+    partial class AddReceivedField
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -68,6 +68,9 @@ namespace WaterProject.Migrations
                     b.Property<string>("Country")
                         .IsRequired()
                         .HasColumnType("TEXT");
+
+                    b.Property<bool>("DonationReceived")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .IsRequired()

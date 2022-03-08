@@ -2,7 +2,7 @@
 
 namespace WaterProject.Migrations
 {
-    public partial class first : Migration
+    public partial class another : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -27,23 +27,23 @@ namespace WaterProject.Migrations
                     table.PrimaryKey("PK_Donations", x => x.DonationID);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "Projects",
-                columns: table => new
-                {
-                    ProjectID = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    ProjectName = table.Column<string>(nullable: true),
-                    ProjectType = table.Column<string>(nullable: true),
-                    ProjectRegionalProgram = table.Column<string>(nullable: true),
-                    ProjectImpact = table.Column<int>(nullable: false),
-                    ProjectPhase = table.Column<string>(nullable: true),
-                    ProjectFunctionalityStatus = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Projects", x => x.ProjectID);
-                });
+            //migrationBuilder.CreateTable(
+            //    name: "Projects",
+            //    columns: table => new
+            //    {
+            //        ProjectID = table.Column<int>(nullable: false)
+            //            .Annotation("Sqlite:Autoincrement", true),
+            //        ProjectName = table.Column<string>(nullable: true),
+            //        ProjectType = table.Column<string>(nullable: true),
+            //        ProjectRegionalProgram = table.Column<string>(nullable: true),
+            //        ProjectImpact = table.Column<int>(nullable: false),
+            //        ProjectPhase = table.Column<string>(nullable: true),
+            //        ProjectFunctionalityStatus = table.Column<string>(nullable: true)
+            //    },
+            //    constraints: table =>
+            //    {
+            //        table.PrimaryKey("PK_Projects", x => x.ProjectID);
+            //    });
 
             migrationBuilder.CreateTable(
                 name: "BasketLineItem",
